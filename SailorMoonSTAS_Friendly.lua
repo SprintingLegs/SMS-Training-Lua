@@ -1547,7 +1547,7 @@ local function mainloop()
         else
           drawtext(gui_x + 43, 1, string.format(".%03d", pos_y % 0x100), 0xC0C0C0, 0x000000, 0xFF, 0x000000)
         end
-        drawtext(gui_x, 1, string.format("%03d    ,%03d    ", pos_x/0x100, pos_y/0x100), 0xFFFFFF, 0x000000, 0xFF, 0x000000)
+        drawtext(gui_x, 1, string.format("%03d    ,%03d    ", math.floor(pos_x/0x100), math.floor(pos_y/0x100)), 0xFFFFFF, 0x000000, 0xFF, 0x000000)
         if vel_x < 0 then
           drawtext(gui_x + 11, 218, string.format(".%03d", -vel_x % 0x100), 0xC0C0C0, 0x000000, 0xFF, 0x000000)
         else
@@ -1558,7 +1558,7 @@ local function mainloop()
         else
           drawtext(gui_x + 43, 218, string.format(".%03d", vel_y % 0x100), 0xC0C0C0, 0x000000, 0xFF, 0x000000)
         end
-        drawtext(gui_x, 218, string.format("%+03d    ,%+03d    ", vel_x/0x100, vel_y/0x100), 0xFFFFFF, 0x000000, 0xFF, 0x000000)
+        drawtext(gui_x, 218, string.format("%+03d    ,%+03d    ", math.floor(vel_x/0x100), math.floor(vel_y/0x100)), 0xFFFFFF, 0x000000, 0xFF, 0x000000)
       end
       
       local player_control = player_no
